@@ -1,0 +1,59 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "KSML",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#identifier"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#number"
+		},
+		{
+			"include": "#comments"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control",
+				"match": "\\b(null|true|false)\\b"
+			}]
+		},
+		"identifier":{
+			"patterns": [{
+				"name": "variable.name",
+				"match": "[a-zA-Z._][0-9a-zA-Z._]*"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape",
+					"match": "\\\\."
+				}
+			]
+		},
+		"number":{
+			"patterns": [{	
+				"name":"constant.numeric",
+				"match": "[+-]?\\d+(.\\d+f?)?"
+			}]
+		},
+		"comments":{
+			"patterns": [{
+				"name": "comment.line",
+				"match": "(#.*|//.*)"	
+			}]
+		}
+	},
+	"scopeName": "source.ksml"
+}

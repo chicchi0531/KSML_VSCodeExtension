@@ -1,0 +1,31 @@
+{
+    "name": "ksml",
+    "displayName": "KSML",
+    "description": "KSML language support for vscode.",
+    "version": "0.0.1",
+    "publisher": "koromosoft",
+    "icon": "images/icon.png",
+    "engines": {
+        "vscode": "^1.63.0"
+    },
+    "repository": {
+		"type": "git",
+		"url": "https://github.com/chicchi0531/KSML_VSCodeExtension.git"
+	},
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "ksml",
+            "aliases": ["KSML", "ksml"],
+            "extensions": [".ksml"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "ksml",
+            "scopeName": "source.ksml",
+            "path": "./syntaxes/ksml.tmLanguage.json"
+        }]
+    }
+}
